@@ -11,12 +11,11 @@ exposing private information.
 
 ## Repository layout
 
-- `docs/` – Sample synthetic medical documents to index in Azure Cognitive Search.
-- `src/` – Python code for the RAG backend. A `.env` file in this folder holds API keys
-  and other secrets.
+
 - `prompts/` – Base prompt templates and red teaming prompts used to probe the system.
 - `tests/` – Basic test cases for the backend.
 - `deploy/` – Dockerfile and `aks-deployment.yaml` to run the service on AKS.
+
 
 ## Setup
 
@@ -30,12 +29,7 @@ exposing private information.
    pip install -r src/requirements.txt
    ```
 3. **Index sample documents**
-   - Use the scripts in `src/` to upload files from `docs/` into your Azure Cognitive
-     Search index.
-4. **Run the RAG service**
-   ```bash
-   python src/app.py
-   ```
+
 
 ## Docker & AKS deployment
 

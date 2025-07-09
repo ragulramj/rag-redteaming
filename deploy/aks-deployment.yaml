@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: rag-backend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: rag-backend
+  template:
+    metadata:
+      labels:
+        app: rag-backend
+    spec:
+      containers:
+      - name: rag-backend
+        image: <registry>/rag-redteaming:latest
+        ports:
+        - containerPort: 8000
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: rag-backend
+spec:
+  selector:
+    app: rag-backend
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 8000
