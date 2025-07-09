@@ -5,3 +5,5 @@ openai
 azure-search-documents
 PyPDF2
 fpdf
+requests
+
